@@ -37,6 +37,6 @@
     - counter
 
 * SOURCES:
-
-CSS CARD FLIP ANIMATION:
-https://davidwalsh.name/css-flip
+  - 1. CSS CARD FLIP ANIMATION:
+        * http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIovZLYrKL9
+  - 2. 

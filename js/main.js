@@ -1,10 +1,11 @@
+$(document).ready(function() {
 
-// javascript vs jQuery
+
 
 // function to randomize card order
 
 // function for card flip - class change
-  // have two classes - one for flipped over, one for a match 
+  // have two classes - one for flipped over, one for a match
 
 
 // click event listener for
@@ -13,3 +14,7 @@
 // function for counter
   // if there are no cards left then the count is stored
   //
+
+
+
+});

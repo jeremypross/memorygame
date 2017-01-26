@@ -14,7 +14,7 @@
   height: 90px;
   margin: 12px;
   border-radius: 10px;
-  background-color: lightblue;
+  background-color: #000;
 }
 
 .container1 {
@@ -52,7 +52,7 @@ h2 {
 
 /*
 css flip animations for cards
-credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIorwLYrKL8
+Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIorwLYrKL8
 */
 
 .card-container{
@@ -71,6 +71,7 @@ credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutori
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 .face.front{
   background:#000;
@@ -80,23 +81,20 @@ credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutori
   box-sizing: border-box;
   color: white;
   text-align: center;
-  background-color: #000;
+  background-color: #fff;
 }
 
-.card-container{
-  perspective: 800px;
-}
 .card{
-  transform-style: preserve-3d;
+  /*transform-style: preserve-3d;*/
   transition: all 1.0s linear;
 }
 
 .card:hover .front{
-  transform: rotateY(-180deg);
+  transform: rotateX(-180deg);
 }
 
 .card:hover .back {
- transform: rotateY(0deg);
+ transform: rotateX(0deg);
 }
 .face {
   backface-visibility: hidden;
@@ -104,22 +102,22 @@ credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutori
   transition: 0.5s;
 }
 .face.front {
-  transform: rotateY(0deg);
+  transform: rotateX(0deg);
 }
 
 .face.back {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
-
+/* end of code from source # 1 */
 
 
 /* MEDIA QUERY FOR FLEXBOX */
-@media(max-width: 700px) {
+/*@media(max-width: 700px) {
 
   .container {
     display: block;
   }
 
 
-}
+}*/

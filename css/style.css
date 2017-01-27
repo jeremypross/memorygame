@@ -5,13 +5,13 @@
   margin-top: 10px;
 }
 
-.col {
+.card-container {
   width: 20%;
   float: left;
   border: #000 3px solid;
   margin: 12px;
   border-radius: 10px;
-  background-color: #000;
+  background-color: #FFF;
 }
 
 .container1 {
@@ -20,7 +20,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  /*border: #000 1px solid;*/
 }
 
 #newgame-button {
@@ -47,17 +46,10 @@ h2 {
   font-size: 1.5em;
 }
 
-.cardset1 {
-  background-image: url('http://www.louisavcannell.com/uploads/1/0/2/2/10226595/screen-shot-2016-06-29-at-12-44-23-am_1_orig.png');
-}
-
 .cardvalue {
   font-size: 3em;
   margin-top: 16px;
 }
-
-
-
 
 /*
 css flip animations for cards
@@ -99,13 +91,25 @@ Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animat
   transition: all 1.0s linear;
 }
 
-.card:hover .front{
+/*.card:hover*/
+
+.front{
   transform: rotateX(-180deg);
 }
 
-.card:hover .back {
- transform: rotateX(0deg);
+/*.card:hover */
+.back {
+  transform: rotateX(0deg);
 }
+
+.front{
+  transform: rotateX(-180deg);
+}
+
+.back {
+  transform: rotateX(0deg);
+}
+
 .face {
   backface-visibility: hidden;
   transform-style: preserve-3d;
@@ -119,7 +123,5 @@ Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animat
 .face.back {
   transform: rotateX(180deg);
 }
-
-
 
 /* end of code from source # 1 */

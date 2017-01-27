@@ -54,44 +54,44 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // create variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.face.front');
+  var frontImage = document.querySelectorAll('img');
 
   frontOfCard.forEach(function(card) {
     card.addEventListener('click', function() {
-    if (counter <=1){
       // create variable for back of card
       var backOfCard = document.querySelectorAll('.face.back');
-      console.log('clicked');
-      console.log(card.nextSibling);
+      // console.log('clicked');
+      // console.log(card.nextSibling);
       // on click - toggle class back
       card.nextSibling.classList.toggle('back');
-
-      var frontImage = document.querySelector('img');
-      frontImage.style.display = 'none';
-      // on click - toggle class front
+      // toggle class front
       card.classList.toggle('front');
+
+      // write a foreach loop to take the images out
+      frontImage.forEach(function(image){
+        image.style.display ='none';
+      });
       // increase counter by 1
       counter +=1;
       console.log(counter);
 
+      // NEXT STEPS
       // push values to compare into new array
       // compare the first and second index values from that array
-    } else {
-      alert('Please choose another card!');
-    };
-  });
 
-
-
-    // need dual click event
-
-    // if the counter is equal to 2
-      // conditional statement to evaluate matches
+      if (counter ===2){
+        // if the counter is equal to 2
+        // conditional statement to evaluate matches
         // if the cards match - then increase score by 1 and alert user
         // else flip cards back over
-          // toggle class front
-    // else
-      // ask user to choose another card
+        // toggle class front
 
+      } else {
+
+      }
+
+
+    });
   });
 
 

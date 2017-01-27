@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
                  '</div>' +
                  '<div class=\'face back\'>' +
                  //  adding array value here
-                 '<div>' + card + '</div>' +
+                 '<div class=\'cardvalue\'>' + card + '</div>' +
                  '</div>'+'</div>'+'</div>'+'</div>';
       // check work
       console.log(newText);
@@ -58,36 +58,10 @@ document.addEventListener('DOMContentLoaded', function(){
       // place array of strings into container element
         // use += operator to add each string in loop - not just last one
       container.innerHTML += newText;
-      // how do i account for multiple containers??
-
-
     });
   };
   createDeck();
 
-
-  // 1 problem - you need to get all the information on the page
-
-  // redeclare variable for array
-
-  // create a new variable for a shuffled array
-
-  // var array = shuffle(cardValues);
-    // loop through the array - mark them up with concatenation
-    // once you have your html -
-      // then you have everything you need
-
-// ******
-// instead of writing out the markup 16 times, write it once, and concatenate the values into the markup
-  // put all three divs inside with the concatenation
-  // loop through the array,create the html
-  // then append it to the element on the html page
-
-// FIRST
-// 1. have array
-// 2. shuffle that array
-// 3. take that shuffled array, and think of a way to dynamically concatenate to div class container which is the only container on the page.
-// 4. Once you have the html then append it to the container
 
 
 // SECOND
@@ -104,14 +78,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // check if match in click event, call back function to check if those are equal
   // then you need a mechanism to check if the two choices match
-
-
-// think about using variables as user
-
-// create the html string that is the 16 divs in the one long string
-
-  // make sure on the console it matches what you have
-
 
 
 });

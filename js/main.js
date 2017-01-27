@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function(){
+
   console.log('js is linked');
 
   // create deck with 8 matching pairs
   var cardValues = ['2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9'];
 
 // function to randomize card order
-// credit:  - fisher yates shuffle (Source #2 in readme.md) (http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+// credit: fisher yates shuffle (Source #2 in readme.md) (http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) & (https://bost.ocks.org/mike/shuffle/)
 
-  function shuffle(arr) {
+  var shuffle = function(arr) {
     var currentIndex = arr.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
@@ -26,53 +27,90 @@ document.addEventListener('DOMContentLoaded', function(){
       arr[currentIndex] = arr[randomIndex];
       arr[randomIndex] = temporaryValue;
     }
-    return cardValues;
+    return arr;
   }
+  console.log(shuffle(cardValues));
 
 
-// function to create divs for each of the array values, and then append each of these divs to the game board.
+
+// function - iterate through the array, and then give each div the value of the the array value.
   var createDeck = function(){
-    shuffle(cardValues);
-    var playingcards = document.createElement('div');
-    var cardDiv = document.getElementsByClassName('card');
-    cardDiv.forEach(function(card){
-      playingCards.innerHTML = '<div>' + card[i].value + '<div>';
-      cardDiv.appendChild(playingcards);
+    cardValues.forEach(function(card){
+      // create empty string
+      var newText = '';
+      // change value of empty string
+      newText += '<div class=\'col\'>' +
+                 '<div class=\'card-container\'>' +
+                 '<div class=\'card\'>' +
+                 '<div class=\'face front\'>' +
+                 '<div class=\'frontside\'>' +
+                 '<img src=\'img/cardback.jpg\' />' +
+                 '</div>' +
+                 '</div>' +
+                 '<div class=\'face back\'>' +
+                 //  adding array value here
+                 '<div>' + card + '</div>' +
+                 '</div>'+'</div>'+'</div>'+'</div>';
+      // check work
+      console.log(newText);
+      // create a variable for container element
+      var container = document.getElementById('container');
+      // place array of strings into container element
+        // use += operator to add each string in loop - not just last one
+      container.innerHTML += newText;
+      // how do i account for multiple containers??
+
+
     });
   };
-
-  // iterate through the array
-  // and then concatenate strings from the values
-  // for (x=0;x<array.length; x++){
-  // '<div>'+values+
+  createDeck();
 
 
+  // 1 problem - you need to get all the information on the page
+
+  // redeclare variable for array
+
+  // create a new variable for a shuffled array
+
+  // var array = shuffle(cardValues);
+    // loop through the array - mark them up with concatenation
+    // once you have your html -
+      // then you have everything you need
+
+// ******
+// instead of writing out the markup 16 times, write it once, and concatenate the values into the markup
+  // put all three divs inside with the concatenation
+  // loop through the array,create the html
+  // then append it to the element on the html page
+
+// FIRST
+// 1. have array
+// 2. shuffle that array
+// 3. take that shuffled array, and think of a way to dynamically concatenate to div class container which is the only container on the page.
+// 4. Once you have the html then append it to the container
 
 
-  //
-  // var createBoard = function(){
-  //   var cards = document.querySelectorAll('cards');
-  //   values.forEach(function(playingcard){
-  //     var newCards = document.createElement('');
-  //     cards.innerHTML = playingcard;
-  //     cards.appendChild()
-  //   })
-  // }
+// SECOND
+// 1. write function to start game - which has series of conditional statements
+// figure out how to keep track of clicks
+// after two clicks if it does'nt match
+// figure out how to reset it
+// think ahead
+
+// 1. html / game board
+// 2. next is game logic
+// design in a way to create business logic
+// THIRD IS WORRYING ABOUT STYLING
+
+  // check if match in click event, call back function to check if those are equal
+  // then you need a mechanism to check if the two choices match
 
 
-// append cards to board
+// think about using variables as user
 
+// create the html string that is the 16 divs in the one long string
 
-// function for card flip - class change
-  // have two classes - one for flipped over, one for a match
-
-
-// click event listener for
-// if else statement to determine whether the cards stay flipped or flip back over
-
-
-// function for counter
-  // if there are no cards left then the count is stored
+  // make sure on the console it matches what you have
 
 
 

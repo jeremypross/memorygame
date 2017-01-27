@@ -1,10 +1,10 @@
-.container {
+#container {
   display: flex;
   width: 65%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-  border: #000 1px solid;
+  /*border: #000 1px solid;*/
 }
 
 .col {
@@ -116,6 +116,8 @@ Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animat
 .face.back {
   transform: rotateX(180deg);
 }
+
+
 
 /* end of code from source # 1 */
 

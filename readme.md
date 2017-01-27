@@ -36,7 +36,7 @@
     - new game Button
     - counter
 
-* SOURCES:
-  - 1. CSS CARD FLIP ANIMATION:
-        * http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIovZLYrKL9
-  - 2. 
+* Code Sources:
+  - 1. CSS card flip : http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIovZLYrKL9
+  - 2. Fisher Yates Shuffle :
+  http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

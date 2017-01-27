@@ -50,6 +50,13 @@ h2 {
   font-size: 1.5em;
 }
 
+.cardset1 {
+  background-image: url('http://www.louisavcannell.com/uploads/1/0/2/2/10226595/screen-shot-2016-06-29-at-12-44-23-am_1_orig.png');
+}
+
+
+
+
 /*
 css flip animations for cards
 Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIorwLYrKL8
@@ -85,7 +92,7 @@ Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animat
 }
 
 .card{
-  /*transform-style: preserve-3d;*/
+  transform-style: preserve-3d;
   transition: all 1.0s linear;
 }
 
@@ -101,6 +108,7 @@ Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animat
   transform-style: preserve-3d;
   transition: 0.5s;
 }
+
 .face.front {
   transform: rotateX(0deg);
 }

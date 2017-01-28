@@ -33,73 +33,95 @@ document.addEventListener('DOMContentLoaded', function(){
   // checking work
   console.log(shuffle(cardValues));
 
+
   // function - iterate through the array, and then give each div the value of the the array value.
   var createDeck = function(){
+    // create empty string that has full scope of createDeck function
     cardValues.forEach(function(card){
-      // create empty string
-      var newText = '';
       // change value of empty string
+      var newText = '';
       newText += '<div class=\'col\'>'+'<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front\'>'+'<img src =\'img/cardback.jpg\' />' + '</div>' +'<div class=\'face back\'>'+'<div class=\'cardvalue\'>'+ card +'</div>'+'</div>'+'</div>'+'</div>'+'</div>';
-      // check work
-      console.log(newText);
       // create a variable for container element
       var container = document.getElementById('container');
       // place array of strings into container element
       // use += operator to add each string in loop - not just last one
       container.innerHTML += newText;
+      // check work
+      console.log(newText);
     });
   };
   createDeck();
 
 
-  // create variable for front of card - for click event
+  // variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.face.front');
-  var frontImage = document.querySelectorAll('img');
+  // variable for images
+  var frontImage  = document.querySelectorAll('img');
+  // variable for back of card
+  var backOfCard  = document.querySelectorAll('.face.back');
+
+  var holderObject = {
+    firstValue: '',
+    secondValue: ''
+  }
+
 
   frontOfCard.forEach(function(card) {
-    card.addEventListener('click', function() {
-      // create variable for back of card
-      var backOfCard = document.querySelectorAll('.face.back');
-      // console.log('clicked');
-      // console.log(card.nextSibling);
-      // on click - toggle class back
+    card.addEventListener('click', function(event) {
       card.nextSibling.classList.toggle('back');
-      // toggle class front
+      //
       card.classList.toggle('front');
-
-      // write a foreach loop to take the images out
+      // for each loop to deal with images
       frontImage.forEach(function(image){
         image.style.display ='none';
       });
-      // increase counter by 1
+
+      // increase click counter by 1
       counter +=1;
       console.log(counter);
 
-      // NEXT STEPS
-      // push values to compare into new array
-      // compare the first and second index values from that array
-
-      if (counter ===2){
-        // if the counter is equal to 2
-        // conditional statement to evaluate matches
-        // if the cards match - then increase score by 1 and alert user
-        // else flip cards back over
-        // toggle class front
-
-      } else {
-
-      }
-
+      // get the value of the card
+      var value = card.nextSibling.firstChild.innerHTML;
+      console.log(value);
 
     });
   });
 
 
-  // PART II
-  // 1. write function to start game - which has series of conditional statements
-  // figure out how to keep track of clicks
-  // check if match in click event, call back function to check if those are equal
-  // figure out how to reset game
+      // pass the var into a new array or new object
+      // use that object to make conditional comparison
+      // if / else statement - if you don't have else statement - do nothing - default
+
+
+      // USE AN OBJECT CONSTRUCTOR TO PASS THE VAR INTO A NEW OBJECT
+
+      // function values(first, second){
+      //   this.firstValue = first;
+      //   this.secondValue = second;
+      // }
+      //
+      // var gameValues = new Values('value[0]','value[1]');
+
+
+
+      // pass var value in an object - and then add logic to say;
+      // on click i will save value
+      // every second click i will reset counter to zero
+      // and take storage object and empty
+
+
+      // if counter = 1
+      //   holderObject.firstValue = value;
+      // if counter = 2
+      //   holderObject.secondValue = value;
+      //   if holderObject.first === holderObject.secondValue
+      //     increase points by 1
+      //     reset counter & holder object
+      // alert you have a match!
+      // take cards off board
+      // else do nothing
+        // alert please choose again
+        // turn cards back over - toggle class front
 
 
 

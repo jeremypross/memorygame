@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function(){
       // will find random number between 0 and length
       randomIndex = Math.floor(Math.random() * currentIndex);
       // works way down through array, from last value until it reaches 0
-      // works way down through array by decreasing current index by 1
       currentIndex -= 1;
       // And swap it with the current element (eliminates need for push(); and pop();)
       temporaryValue = arr[currentIndex];
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function(){
       // use += operator to add each string in loop - not just last one
       container.innerHTML += newText;
       // check work
-      console.log(newText);
+      // console.log(newText);
     });
   };
   createDeck();
@@ -60,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function(){
   var frontImage  = document.querySelectorAll('img');
   // variable for back of card
   var backOfCard  = document.querySelectorAll('.face.back');
+  // create holder array for card values
+  var valuesArray = [];
 
   // for each loop to toggle card classes when there is a click event
   frontOfCard.forEach(function(card) {
@@ -81,43 +82,58 @@ document.addEventListener('DOMContentLoaded', function(){
       var playingCardValue = card.nextSibling.firstChild.innerHTML;
       console.log(playingCardValue);
 
-      // TAKE VARIABLE AND PASS IT THROUGH AN ARRAY
-
-      // create holder array for card values
-      var valuesArray =[];
-
-      // push card values into array
-      valuesArray.push(playingCardValue);
-
+      // push each click value into the array
+      valuesArray.push(parseInt(playingCardValue));
+      // helper - checks array
       console.log(valuesArray);
 
-      // push a value each time there is a click
+        // GAME LOGIC
+        // if there are two values in the array
+        if (valuesArray.length ===2){
+          // if value1 = value 2
+          if (valuesArray[0] === valuesArray[1]) {
+            // alert = you have a match!
+            alert('You have a match!'); // WORKS
+            // increase points by 1
+            score ++; // WORKS
+            console.log(score);
+            // reset counter to zero
+            counter = 0; // WORKS
+            console.log(counter);
+            // empty array
+            valuesArray = []; // WORKS
+            console.log(valuesArray);
 
-      // THEN add game logic - once there are two values - then evaluate for matches
+            // take cards off board
+            var removeCards = function(){
+              document.getElementsByClassName('.face')
+              .setAttribute('style', 'display: none')
+            };
+            removeCards();
+
+          } else {
+            // alert try again
+            alert('Try again!'); // WORKS
+
+            // flip cards back over
 
 
-      // pass var value in an object - and then add logic to say;
-      // on click i will save value
-      // every second click i will reset counter to zero
-      // and take storage object and empty
-      // use that object to make conditional comparison
-      // if / else statement - if you don't have else statement - do nothing - default
+            // reset counter
+            counter = 0; // WORKS
+            console.log(counter);
+            // empty array
+            valuesArray = []; // WORKS
+            console.log(valuesArray);
+          }
+
+
+        // else - do nothing - default
+      } else {
+
+      }
 
     });
   });
 
-
-      // if counter = 1
-      //   holderObject.firstValue = value;
-      // if counter = 2
-      //   holderObject.secondValue = value;
-      //   if holderObject.first === holderObject.secondValue
-      //     increase points by 1
-      //     reset counter & holder object
-      // alert you have a match!
-      // take cards off board
-      // else do nothing
-        // alert please choose again
-        // turn cards back over - toggle class front
 
 });

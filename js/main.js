@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function(){
   createDeck();
 
 
+
   // variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.face.front');
   // variable for images
@@ -60,18 +61,14 @@ document.addEventListener('DOMContentLoaded', function(){
   // variable for back of card
   var backOfCard  = document.querySelectorAll('.face.back');
 
-  var holderObject = {
-    firstValue: '',
-    secondValue: ''
-  }
-
-
+  // for each loop to toggle card classes when there is a click event
   frontOfCard.forEach(function(card) {
     card.addEventListener('click', function(event) {
+      // toggle class back
       card.nextSibling.classList.toggle('back');
-      //
+      // toggle class front
       card.classList.toggle('front');
-      // for each loop to deal with images
+      // for each loop to turn off front image on cards
       frontImage.forEach(function(image){
         image.style.display ='none';
       });
@@ -80,9 +77,63 @@ document.addEventListener('DOMContentLoaded', function(){
       counter +=1;
       console.log(counter);
 
-      // get the value of the card
-      var value = card.nextSibling.firstChild.innerHTML;
-      console.log(value);
+      // get the value of the clicked card
+      var playingCardValue = card.nextSibling.firstChild.innerHTML;
+      console.log(playingCardValue);
+
+      // TAKE VARIABLE AND PASS IT THROUGH AN ARRAY
+
+      // create holder array for card values
+      var valuesArray = [];
+
+      valuesArray.push(playingCardValue);
+
+      console.log(valuesArray);
+
+
+
+
+
+
+
+      // take the variable playingCardValue
+      // store a value in an array/object each time there is a click
+
+
+      // function Array(firstValue, secondValue){
+      //   this.firstValue = firstValue;
+      //   this.secondValue = secondValue;
+      //
+      //   // push new variable into array
+      //   valuesArray.push(arrayEntry);
+      // };
+
+
+
+
+      // push a value each time there is a click
+
+      // THEN add game logic - once there are two values - then evaluate for matches
+
+
+
+      // pass variable into a new array
+
+
+      // pass var value in an object - and then add logic to say;
+      // on click i will save value
+      // every second click i will reset counter to zero
+      // and take storage object and empty
+
+
+
+
+      // take the two click event values and push into new array
+
+      // how do you push these values into an array?
+
+
+
 
     });
   });
@@ -93,21 +144,9 @@ document.addEventListener('DOMContentLoaded', function(){
       // if / else statement - if you don't have else statement - do nothing - default
 
 
-      // USE AN OBJECT CONSTRUCTOR TO PASS THE VAR INTO A NEW OBJECT
-
-      // function values(first, second){
-      //   this.firstValue = first;
-      //   this.secondValue = second;
-      // }
-      //
-      // var gameValues = new Values('value[0]','value[1]');
 
 
 
-      // pass var value in an object - and then add logic to say;
-      // on click i will save value
-      // every second click i will reset counter to zero
-      // and take storage object and empty
 
 
       // if counter = 1

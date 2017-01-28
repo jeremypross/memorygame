@@ -87,51 +87,50 @@ document.addEventListener('DOMContentLoaded', function(){
       // helper - checks array
       console.log(valuesArray);
 
-        // GAME LOGIC
-        // if there are two values in the array
-        if (valuesArray.length ===2){
-          // if value1 = value 2
-          if (valuesArray[0] === valuesArray[1]) {
-            // alert = you have a match!
-            alert('You have a match!'); // WORKS
-            // increase points by 1
-            score ++; // WORKS
-            console.log(score);
-            // reset counter to zero
-            counter = 0; // WORKS
-            console.log(counter);
-            // empty array
-            valuesArray = []; // WORKS
-            console.log(valuesArray);
+      // GAME LOGIC
+      // if there are two values in the array
+      if (valuesArray.length ===2){
+        // if value1 = value 2
+        if (valuesArray[0] === valuesArray[1]) {
+          // alert = you have a match!
+          alert('You have a match!'); // WORKS
+          // increase points by 1
+          score ++; // WORKS
+          console.log(score);
+          // reset counter to zero
+          counter = 0; // WORKS
+          console.log(counter);
+          // empty array
+          valuesArray = []; // WORKS
+          console.log(valuesArray);
 
-            // take cards off board
-            var removeCards = function(){
-              document.getElementsByClassName('.face')
-              .setAttribute('style', 'display: none')
-            };
-            removeCards();
+          // take cards off board
+          var removeCards = function(){
+            document.getElementsByClassName('.face')
+            .setAttribute('style', 'display: none')
+          };
+          removeCards();
 
-          } else {
-            // alert try again
-            alert('Try again!'); // WORKS
+        } else {
+          // alert try again
+          alert('Try again!'); // WORKS
 
-            // flip cards back over
+          // flip cards back over
 
 
-            // reset counter
-            counter = 0; // WORKS
-            console.log(counter);
-            // empty array
-            valuesArray = []; // WORKS
-            console.log(valuesArray);
-          }
+          // reset counter
+          counter = 0; // WORKS
+          console.log(counter);
+          // empty array
+          valuesArray = []; // WORKS
+          console.log(valuesArray);
+        }
 
 
         // else - do nothing - default
       } else {
 
       }
-
     });
   });
 

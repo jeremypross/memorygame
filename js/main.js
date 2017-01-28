@@ -84,69 +84,27 @@ document.addEventListener('DOMContentLoaded', function(){
       // TAKE VARIABLE AND PASS IT THROUGH AN ARRAY
 
       // create holder array for card values
-      var valuesArray = [];
+      var valuesArray =[];
 
+      // push card values into array
       valuesArray.push(playingCardValue);
 
       console.log(valuesArray);
-
-
-
-
-
-
-
-      // take the variable playingCardValue
-      // store a value in an array/object each time there is a click
-
-
-      // function Array(firstValue, secondValue){
-      //   this.firstValue = firstValue;
-      //   this.secondValue = secondValue;
-      //
-      //   // push new variable into array
-      //   valuesArray.push(arrayEntry);
-      // };
-
-
-
 
       // push a value each time there is a click
 
       // THEN add game logic - once there are two values - then evaluate for matches
 
 
-
-      // pass variable into a new array
-
-
       // pass var value in an object - and then add logic to say;
       // on click i will save value
       // every second click i will reset counter to zero
       // and take storage object and empty
-
-
-
-
-      // take the two click event values and push into new array
-
-      // how do you push these values into an array?
-
-
-
-
-    });
-  });
-
-
-      // pass the var into a new array or new object
       // use that object to make conditional comparison
       // if / else statement - if you don't have else statement - do nothing - default
 
-
-
-
-
+    });
+  });
 
 
       // if counter = 1
@@ -161,8 +119,5 @@ document.addEventListener('DOMContentLoaded', function(){
       // else do nothing
         // alert please choose again
         // turn cards back over - toggle class front
-
-
-
 
 });

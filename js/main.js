@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var score = 0;
 
   // function to randomize card order
-  // credit: fisher yates shuffle (Source #2 in readme.md) (http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) & (https://bost.ocks.org/mike/shuffle/)
+  // credit: fisher yates algorithm (Source #2 in readme.md) (http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) & (https://bost.ocks.org/mike/shuffle/)
   var shuffle = function(arr) {
     var currentIndex = arr.length, temporaryValue, randomIndex;
 
@@ -39,14 +39,12 @@ document.addEventListener('DOMContentLoaded', function(){
     cardValues.forEach(function(card){
       // change value of empty string
       var newText = '';
-      newText += '<div class=\'col\'>'+'<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front\'>'+'<img src =\'img/cardback.jpg\' />' + '</div>' +'<div class=\'face back\'>'+'<div class=\'cardvalue\'>'+ card +'</div>'+'</div>'+'</div>'+'</div>'+'</div>';
+      newText += '<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front\'>'+'</div>'+'<div class=\'face back\'>'+'<div class=\'cardvalue\'>'+ card +'</div>'+'</div>'+'</div>'+'</div>';
       // create a variable for container element
       var container = document.getElementById('container');
       // place array of strings into container element
       // use += operator to add each string in loop - not just last one
       container.innerHTML += newText;
-      // check work
-      // console.log(newText);
     });
   };
   createDeck();
@@ -55,8 +53,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.face.front');
-  // variable for images
-  var frontImage  = document.querySelectorAll('img');
   // variable for back of card
   var backOfCard  = document.querySelectorAll('.face.back');
   // create holder array for card values
@@ -69,22 +65,14 @@ document.addEventListener('DOMContentLoaded', function(){
       card.nextSibling.classList.toggle('back');
       // toggle class front
       card.classList.toggle('front');
-      // for each loop to turn off front image on cards
-      frontImage.forEach(function(image){
-        image.style.display ='none';
-      });
-
       // increase click counter by 1
       counter +=1;
       console.log(counter);
-
       // get the value of the clicked card
       var playingCardValue = card.nextSibling.firstChild.innerHTML;
       console.log(playingCardValue);
-
       // push each click value into the array
       valuesArray.push(parseInt(playingCardValue));
-      // helper - checks array
       console.log(valuesArray);
 
       // GAME LOGIC
@@ -92,11 +80,11 @@ document.addEventListener('DOMContentLoaded', function(){
       if (valuesArray.length ===2){
         // if value1 = value 2
         if (valuesArray[0] === valuesArray[1]) {
-          // alert = you have a match!
-          alert('You have a match!'); // WORKS
           // increase points by 1
           score ++; // WORKS
           console.log(score);
+          // alert = you have a match!
+          alert(`You found a match! Your match count is ${score} of 8!`); // WORKS
           // reset counter to zero
           counter = 0; // WORKS
           console.log(counter);
@@ -104,20 +92,20 @@ document.addEventListener('DOMContentLoaded', function(){
           valuesArray = []; // WORKS
           console.log(valuesArray);
 
-          // take cards off board
-          var removeCards = function(){
-            document.getElementsByClassName('.face')
-            .setAttribute('style', 'display: none')
-          };
-          removeCards();
+          // TAKE CARDS OFF BOARD
+
 
         } else {
+          // FLIP CARDS BACK OVER
+
+          var face = document.querySelectorAll('face');
+
+          
+
+
+
           // alert try again
           alert('Try again!'); // WORKS
-
-          // flip cards back over
-
-
           // reset counter
           counter = 0; // WORKS
           console.log(counter);
@@ -125,14 +113,10 @@ document.addEventListener('DOMContentLoaded', function(){
           valuesArray = []; // WORKS
           console.log(valuesArray);
         }
+      } // else - do nothing - default
 
-
-        // else - do nothing - default
-      } else {
-
-      }
-    });
-  });
+    }); // click event
+  }); // forEach loop
 
 
 });

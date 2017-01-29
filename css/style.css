@@ -6,7 +6,9 @@
 }
 
 .card-container {
+  position: relative;
   width: 20%;
+  height: 90px;
   float: left;
   border: #000 3px solid;
   margin: 12px;
@@ -56,11 +58,6 @@ css flip animations for cards
 Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIorwLYrKL8
 */
 
-.card-container{
-  height: 90px;
-  position: relative;
-}
-
 .card{
   position: absolute;
   width: 100%;
@@ -74,9 +71,11 @@ Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animat
   height: 100%;
   border-radius: 5px;
 }
+
 .face.front{
   background:#000;
 }
+
 .face.back {
   display: block;
   box-sizing: border-box;
@@ -89,17 +88,6 @@ Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animat
 .card{
   transform-style: preserve-3d;
   transition: all 1.0s linear;
-}
-
-/*.card:hover*/
-
-.front{
-  transform: rotateX(-180deg);
-}
-
-/*.card:hover */
-.back {
-  transform: rotateX(0deg);
 }
 
 .front{

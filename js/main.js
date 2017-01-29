@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
     cardValues.forEach(function(card){
       // change value of empty string
       var newText = '';
-      newText += '<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front\'>'+'</div>'+'<div class=\'face back\'>'+ card +'</div>'+'</div>'+'</div>';
+      newText += '<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front cardfront\'>'+'</div>'+'<div class=\'face back cardback\'>'+ card +'</div>'+'</div>'+'</div>';
       // create a variable for container element
       var container = document.getElementById('container');
       // place array of strings into container element
@@ -97,25 +97,44 @@ document.addEventListener('DOMContentLoaded', function(){
 
           // TAKE CARDS OFF BOARD - doesn't work
           // variable for clicked cards
-          // var clickedCard = document.querySelectorAll('clicked');
+          // var clickedCards = document.querySelectorAll('.clicked');
           //
-          // clickedCard.forEach(function(each){
+          // clickedCards.forEach(function(each){
           //   each.style.display = 'none';
+          //   // each.style.visibility = 'hidden';
           // });
-
-          // document.getElementsByClassName('clicked').style.display = 'none';
 
 
         } else {
 
           // FLIP CARDS BACK OVER - doesn't work
-          // variable for clicked cards
-          var clickedCards = document.getElementsByClassName('clicked');
-          // for each loop to toggle classes to flip back over
-          clickedCards.forEach(function(cards){
-            cards.classList.toggle = '.front';
-            cards.nextSibling.classList.toggle = '.back';
+
+
+          var clickedCardFront = document.querySelectorAll('.cardfront');
+
+          clickedCardFront.forEach(function(cards){
+            cards.classList.add('front');
+          })
+
+          var clickedCardBack= document.querySelectorAll('.cardback');
+
+          clickedCardBack.forEach(function(cards){
+            cards.classList.add('back');
           });
+
+
+
+          // var click = document.getElementsByClassName('card');
+          // var clickedFront = click.firstChild;
+          // var clickedBack = clickedFront.nextSibling;
+          //
+          // clickedFront.forEach(function(cards){
+          //   cards.classList.add = 'front';
+          // });
+          //
+          // clickedBack.forEach(function(cardsTwo){
+          //   cardsTwo.classList.add = 'back';
+          // })
 
 
 
@@ -137,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     }); // click event
   }); // forEach loop
+
 
 
 

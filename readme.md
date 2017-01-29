@@ -25,22 +25,17 @@
 
 ![memory game wireframe ](img/wireframe.png?raw=true "Wire Frame")
 
-### Design Notes
+### User Stories:
+* Users should be able to click on cards to flip them over.
+* Users should be able to have matched or mismatched cards evaluated.
+*
 
-* use CSS flip / toggle flips for cards
+### Technologies Used:
+* HTML - creating cards and game board
+* CSS - styling cards
+* Javascript - adding game logic and making cards interactive
 
-* randomize card order
-* Math.floor(Math.random() * 16) + 1
-
-* think about how to append an array that will change order to a grid
-    - or do you want to cards to be set?
-
-* page elements:
-    - grid of cards
-    - new game Button
-    - counter
-
-* Code Sources:
+#### Code Sources:
   - 1. CSS card flip : http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIovZLYrKL9
   - 2. Fisher Yates Shuffle :
   http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

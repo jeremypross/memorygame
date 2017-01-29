@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function(){
   // create holder array for card values
   var valuesArray = [];
 
+  var gameScore = document.getElementById('score');
+
   // for each loop to toggle card classes when there is a click event
   frontOfCard.forEach(function(card) {
     card.addEventListener('click', function(event) {
@@ -65,11 +67,8 @@ document.addEventListener('DOMContentLoaded', function(){
       card.nextSibling.classList.add('clicked');
       // toggle class front
       card.classList.toggle('front');
-
       // add class to clicked cards
       card.classList.add('clicked');
-
-
       // increase click counter by 1
       counter +=1;
       console.log(counter);
@@ -90,6 +89,8 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(score);
           // alert = you have a match!
           alert(`You found a match! Your match count is ${score} of 8!`); // WORKS
+          // increase game score
+          gameScore.innerHTML = `${score} out of 8!`;
           // reset counter to zero
           counter = 0; // WORKS
           console.log(counter);
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function(){
           // var clickedCard = document.querySelectorAll('clicked');
           //
           // clickedCard.forEach(function(each){
-          //   each.style.display = 'block';
+          //   each.style.display = 'none';
           // });
 
           // document.getElementsByClassName('clicked').style.display = 'none';
@@ -113,11 +114,12 @@ document.addEventListener('DOMContentLoaded', function(){
           // FLIP CARDS BACK OVER - doesn't work
 
           // variable for clicked cards
-          var clickedCard = document.getElementsByClassName('clicked');
+          var clicked = document.getElementsByClassName('clicked');
 
-          clickedCard.forEach(function(each){
-            each.classList.('new');
+          clicked.forEach(function(each){
+            each.classList.display = 'none';
           });
+
 
           // when you click
           // front and back are BOTH toggled off

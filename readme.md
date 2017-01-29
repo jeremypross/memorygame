@@ -14,12 +14,9 @@
 
 5. If the cards don't match, they are turned face down and the user chooses again.
 
-6. Your score is the number of moves that it takes to clear the board.
-    - While user is playing there is a counter for moves.
+6. The score is the number of matches the user is found.
 
-7. Log the score.
-
-8. Game will start over.
+7. Game will start over when all matches are found, or when the 'reset game' button is clicked.
 
 ### Wireframe:
 

@@ -18,6 +18,9 @@
 
 7. Game will start over when all matches are found, or when the 'reset game' button is clicked.
 
+## Approach
+I wanted to build a game that I'd be able to initiate dynamically with randomized card values. I thought the game logic would be challenging and would allow me to leverage the concepts we've learned thus far, specifically DOM manipulation, and writing loops to iterate through arrays to execute conditionals.  
+
 ### Wireframe:
 
 ![memory game wireframe ](img/wireframe.png?raw=true "Wire Frame")

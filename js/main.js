@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function(){
       // GAME LOGIC
       // if there are two values in the array
       if (valuesArray.length ===2) {
-        // if value1 = value 2
+        // IF MATCH
         if (valuesArray[0] === valuesArray[1]) {
           // increase points by 1
           score ++; // WORKS
@@ -96,9 +96,10 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(valuesArray);
 
           // TAKE CARDS OFF BOARD - doesn't work
+
           // variable for clicked cards
-          // var clickedCards = document.querySelectorAll('.clicked');
-          //
+          // var clickedCards = document.querySelectorAll('  ');
+
           // clickedCards.forEach(function(each){
           //   each.style.display = 'none';
           //   // each.style.visibility = 'hidden';
@@ -106,40 +107,23 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
         } else {
+          // IF NO MATCH
 
-          // FLIP CARDS BACK OVER - doesn't work
+          // FLIP CARDS BACK OVER
+          // if the card element contains clicked class then execute
+          if (document.querySelectorAll('face').classList.contains('clicked') = true) {
 
+            var clickedCardFront = document.querySelectorAll('.cardfront');
+            clickedCardFront.forEach(function(cards){
+              cards.classList.add('front');
+            });
 
-          var clickedCardFront = document.querySelectorAll('.cardfront');
+            var clickedCardBack= document.querySelectorAll('.cardback');
+            clickedCardBack.forEach(function(cards){
+              cards.classList.add('back');
+            });
 
-          clickedCardFront.forEach(function(cards){
-            cards.classList.add('front');
-          })
-
-          var clickedCardBack= document.querySelectorAll('.cardback');
-
-          clickedCardBack.forEach(function(cards){
-            cards.classList.add('back');
-          });
-
-
-
-          // var click = document.getElementsByClassName('card');
-          // var clickedFront = click.firstChild;
-          // var clickedBack = clickedFront.nextSibling;
-          //
-          // clickedFront.forEach(function(cards){
-          //   cards.classList.add = 'front';
-          // });
-          //
-          // clickedBack.forEach(function(cardsTwo){
-          //   cardsTwo.classList.add = 'back';
-          // })
-
-
-
-          // when you click
-          // classes front and back toggled off / clicked added
+          }  //do nothing
 
 
           // alert try again

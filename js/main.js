@@ -47,8 +47,6 @@ document.addEventListener('DOMContentLoaded', function(){
   };
   createDeck();
 
-  // variable for clicked cards
-  var clicked = document.getElementsByClassName('clicked');
   // variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.front');
   // variable for back of card
@@ -111,15 +109,18 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
 
           // FLIP CARDS BACK OVER - doesn't work
-          //
-          clicked.forEach(function(cards){
-            cards.classList.add = 'front';
-            cards.nextSibling.classList.add = 'back';
+          // variable for clicked cards
+          var clickedCards = document.getElementsByClassName('clicked');
+          // for each loop to toggle classes to flip back over
+          clickedCards.forEach(function(cards){
+            cards.classList.toggle = '.front';
+            cards.nextSibling.classList.toggle = '.back';
           });
 
 
+
           // when you click
-          // classes front and back toggled off / clicked added 
+          // classes front and back toggled off / clicked added
 
 
           // alert try again

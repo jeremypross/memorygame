@@ -40,7 +40,7 @@ I wanted to build a game that I'd be able to initiate dynamically with randomize
 ### Approach
 * My first step was to build the game board, and create a grid of 16 cards.
 * Next I used Source 1 to create a card animation which would flip each card using a transform css animation.
-* After implementing the card animation, I leveraged the Fisher Yates algorithm to dynamically shuffle the cards.
+* After implementing the card animation, I leveraged the Fisher Yates algorithm in Source 2 to dynamically shuffle the cards.
 * I then used vanilla javascript to create a click event for a users turn, and store each clicked elements value in a new array.
 * Last, I wrote a series of conditionals which evaluates for matches and non-matches from the new Array.
 

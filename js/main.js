@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-  console.log('js is linked');
-
   // create deck with 8 matching pairs
   var cardValues = ['2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9'];
 
@@ -49,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function(){
   };
   createDeck();
 
-
+  // variable for clicked cards
+  var clicked = document.getElementsByClassName('clicked');
   // variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.front');
   // variable for back of card
@@ -112,19 +111,15 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
 
           // FLIP CARDS BACK OVER - doesn't work
-
-          // variable for clicked cards
-          var clicked = document.getElementsByClassName('clicked');
-
-          clicked.forEach(function(each){
-            each.classList.display = 'none';
+          //
+          clicked.forEach(function(cards){
+            cards.classList.add = 'front';
+            cards.nextSibling.classList.add = 'back';
           });
 
 
           // when you click
-          // front and back are BOTH toggled off
-          // so when you don't have a match
-          // both classes need to be toggled back on
+          // classes front and back toggled off / clicked added 
 
 
           // alert try again
@@ -137,6 +132,8 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(valuesArray);
         }
       } // else - do nothing - default
+
+
     }); // click event
   }); // forEach loop
 

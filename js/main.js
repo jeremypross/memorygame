@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
     cardValues.forEach(function(card){
       // change value of empty string
       var newText = '';
-      newText += '<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front\'>'+'</div>'+'<div class=\'face back\'>'+'<div class=\'cardvalue\'>'+ card +'</div>'+'</div>'+'</div>'+'</div>';
+      newText += '<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front\'>'+'</div>'+'<div class=\'face back\'>'+ card +'</div>'+'</div>'+'</div>';
       // create a variable for container element
       var container = document.getElementById('container');
       // place array of strings into container element
@@ -50,11 +50,10 @@ document.addEventListener('DOMContentLoaded', function(){
   createDeck();
 
 
-
   // variable for front of card - for click event
-  var frontOfCard = document.querySelectorAll('.face.front');
+  var frontOfCard = document.querySelectorAll('.front');
   // variable for back of card
-  var backOfCard  = document.querySelectorAll('.face.back');
+  var backOfCard  = document.querySelectorAll('.back');
   // create holder array for card values
   var valuesArray = [];
 
@@ -63,13 +62,19 @@ document.addEventListener('DOMContentLoaded', function(){
     card.addEventListener('click', function(event) {
       // toggle class back
       card.nextSibling.classList.toggle('back');
+      card.nextSibling.classList.add('clicked');
       // toggle class front
       card.classList.toggle('front');
+
+      // add class to clicked cards
+      card.classList.add('clicked');
+
+
       // increase click counter by 1
       counter +=1;
       console.log(counter);
       // get the value of the clicked card
-      var playingCardValue = card.nextSibling.firstChild.innerHTML;
+      var playingCardValue = card.nextSibling.innerHTML;
       console.log(playingCardValue);
       // push each click value into the array
       valuesArray.push(parseInt(playingCardValue));
@@ -77,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
       // GAME LOGIC
       // if there are two values in the array
-      if (valuesArray.length ===2){
+      if (valuesArray.length ===2) {
         // if value1 = value 2
         if (valuesArray[0] === valuesArray[1]) {
           // increase points by 1
@@ -92,16 +97,32 @@ document.addEventListener('DOMContentLoaded', function(){
           valuesArray = []; // WORKS
           console.log(valuesArray);
 
-          // TAKE CARDS OFF BOARD
+          // TAKE CARDS OFF BOARD - doesn't work
+          // variable for clicked cards
+          // var clickedCard = document.querySelectorAll('clicked');
+          //
+          // clickedCard.forEach(function(each){
+          //   each.style.display = 'block';
+          // });
+
+          // document.getElementsByClassName('clicked').style.display = 'none';
 
 
         } else {
-          // FLIP CARDS BACK OVER
 
-          var face = document.querySelectorAll('face');
+          // FLIP CARDS BACK OVER - doesn't work
 
-          
+          // variable for clicked cards
+          var clickedCard = document.getElementsByClassName('clicked');
 
+          clickedCard.forEach(function(each){
+            each.classList.('new');
+          });
+
+          // when you click
+          // front and back are BOTH toggled off
+          // so when you don't have a match
+          // both classes need to be toggled back on
 
 
           // alert try again
@@ -114,9 +135,9 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(valuesArray);
         }
       } // else - do nothing - default
-
     }); // click event
   }); // forEach loop
+
 
 
 });

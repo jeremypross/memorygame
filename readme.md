@@ -21,6 +21,10 @@
 
 8. Game will start over.
 
+### Wireframe:
+
+![memory game wireframe ](img/wireframe.png?raw=true "Wire Frame")
+
 ### Design Notes
 
 * use CSS flip / toggle flips for cards

@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', function(){
       valuesArray.push(parseInt(playingCardValue));
       console.log(valuesArray);
 
+
+
       // GAME LOGIC
       // if there are two values in the array
       if (valuesArray.length ===2) {
@@ -98,32 +100,34 @@ document.addEventListener('DOMContentLoaded', function(){
           // TAKE CARDS OFF BOARD - doesn't work
 
           // variable for clicked cards
-          // var clickedCards = document.querySelectorAll('  ');
-
+          // var clickedCards = document.querySelectorAll('clicked');
+          //
           // clickedCards.forEach(function(each){
           //   each.style.display = 'none';
           //   // each.style.visibility = 'hidden';
           // });
 
+          // is this trying to turn the face divs off?
+
 
         } else {
           // IF NO MATCH
 
-          // FLIP CARDS BACK OVER
-          // if the card element contains clicked class then execute
-          if (document.querySelectorAll('face').classList.contains('clicked') = true) {
+          // flip cards back over
+          setTimeout(function() {
 
-            var clickedCardFront = document.querySelectorAll('.cardfront');
+
+
+          var clickedCardFront = document.querySelectorAll('.cardfront');
             clickedCardFront.forEach(function(cards){
               cards.classList.add('front');
             });
 
-            var clickedCardBack= document.querySelectorAll('.cardback');
-            clickedCardBack.forEach(function(cards){
-              cards.classList.add('back');
-            });
+          var clickedCardBack= document.querySelectorAll('.cardback');
+          clickedCardBack.forEach(function(cards){
+            cards.classList.add('back');
+          });
 
-          }  //do nothing
 
 
           // alert try again
@@ -134,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function(){
           // empty array
           valuesArray = []; // WORKS
           console.log(valuesArray);
+        }, 1000);
         }
       } // else - do nothing - default
 

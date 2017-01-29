@@ -30,12 +30,19 @@
 * Users should be able to have matched or mismatched cards evaluated.
 * Users should be able to be alerted to whether they have a match or to try again.
 * Users should be able to see their current score
-* Users should be able to reset the game 
+* Users should be able to reset the game
 
 ### Technologies Used:
 * HTML - creating cards and game board
 * CSS - styling cards
 * Javascript - adding game logic and making cards interactive
+
+### Approach
+* My first step was to build the game board, and create a grid of 16 cards.
+* Next I used Source 1 to create a card animation which would flip each card using a transform css animation.
+* After implementing the card animation, I leveraged the Fisher Yates algorithm to dynamically shuffle the cards.
+* I then used vanilla javascript to create a click event for a users turn, and store each clicked elements value in a new array.
+* Last, I wrote a series of conditionals which evaluates for matches and non-matches from the new Array.
 
 #### Code Sources:
   - 1. CSS card flip : http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIovZLYrKL9

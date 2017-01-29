@@ -3,20 +3,18 @@
 
 ## Rules
 
-1. Start Game Button
-
-2. User is dealt a grid of cards that are dealt face down.  
+1. User is dealt a grid of cards that are dealt face down.  
     - Grid of 16 cards, 8 matching pairs.
 
-3. Each turn, the user chooses two cards. Each turn is counted as 1 move.
+2. Each turn, the user chooses two cards. Each turn is counted as 1 move.
 
-4. If the cards match, then they are taken off the board and the user is awarded a point.
+3. If the cards match, then they are taken off the board and the user is awarded a point.
 
-5. If the cards don't match, they are turned face down and the user chooses again.
+4. If the cards don't match, they are turned face down and the user chooses again.
 
-6. The score is the number of matches the user is found.
+5. The score is the number of matches the user is found.
 
-7. Game will start over when all matches are found, or when the 'reset game' button is clicked.
+6. Game will start over when all matches are found, or when the 'reset game' button is clicked.
 
 ### Approach
 I wanted to build a game that I'd be able to initiate dynamically with randomized card values. I thought the game logic would be challenging and would allow me to leverage the concepts we've learned thus far, specifically DOM manipulation, and writing loops to iterate through arrays to execute conditionals.  

@@ -163,6 +163,13 @@ document.addEventListener('DOMContentLoaded', function(){
         }
       } // else - do nothing - default
 
+      // if you have found all 8 pairs, alert the user they have won
+      if (score === 8){
+        alert('You have won the game!');
+        // reshuffle cards
+        createDeck();
+      }
+
 
     }); // click event
   }); // forEach loop

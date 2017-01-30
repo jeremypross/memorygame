@@ -53,13 +53,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // write a call back function for if match event target
     // where event target visibility is hidden
 
-  // variable for cards with clicked class
-  var clicked = document.getElementsByClassName('clicked');
 
-  // for loop to run a call back function hideMatches through clicked elements
-  for (var x=0; x<clicked.length; x++) {
-    clicked[x].addEventListener('click', hideMatches, false);
-  }
 
   // ====================
 
@@ -84,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function(){
       card.classList.toggle('front');
 
       // add class to clicked cards
-      card.classList.add('clicked');
+      card.nextSibling.classList.add('clicked');
 
       // increase click counter by 1
       counter +=1;
@@ -103,13 +97,11 @@ document.addEventListener('DOMContentLoaded', function(){
       // }
       // console.log(event.target);
 
-      function hideMatches(event){
-        var match = event.target;
-        match.style.display = 'none';
-      }
       console.log(event.target);
 
-      // need to get match to be var clicked
+      // have to find way to target elements.
+
+
 
 
       // GAME LOGIC
@@ -132,7 +124,28 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(valuesArray);
 
           // TAKE CARDS OFF BOARD
-          hideMatches();
+          // variable for cards with clicked class
+          var clicked = document.querySelectorAll('clicked');
+
+          clicked.forEach(function(cards){
+            cards.style.visibility = 'hidden';
+          })
+
+          // clicked.forEach(function(cards){
+          //   cards.style.visibility = 'hidden';
+          // })
+
+          // for loop to run a call back function hideMatches through clicked elements
+          // for (var x=0; x<clicked.length; x++) {
+          //   // clicked[x].addEventListener('click', hideMatches, false);
+          // clicked.style.visibility = 'hidden';
+          // }
+
+
+          // function hideMatches(){
+          // }
+
+
 
         } else {
           // IF NO MATCH

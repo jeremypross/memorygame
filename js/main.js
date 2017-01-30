@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function(){
   console.log(shuffle(cardValues));
 
 
+
   // function - iterate through the array, and then give each div the value of the the array value.
   var createDeck = function(){
     // create empty string that has full scope of createDeck function
@@ -47,6 +48,27 @@ document.addEventListener('DOMContentLoaded', function(){
   };
   createDeck();
 
+  // ====================
+
+  // write a call back function for if match event target
+    // where event target visibility is hidden
+
+
+
+
+  var clicked = document.getElementsByClassName('clicked');
+
+  for (var x=0; x<clicked.length; x++) {
+    clicked[x].addEventListener('click', hideMatches, false);
+  }
+
+  // only implementing when you've looped through once already
+  // the rule is only implemented after you've made the match
+  // write this function in the form of a call back function that is outside the click event
+  // that you can call once you have a match
+
+  // ====================
+
   // variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.front');
   // variable for back of card
@@ -56,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   var gameScore = document.getElementById('score');
 
+
   // for each loop to toggle card classes when there is a click event
   frontOfCard.forEach(function(card) {
     card.addEventListener('click', function(event) {
@@ -64,8 +87,10 @@ document.addEventListener('DOMContentLoaded', function(){
       card.nextSibling.classList.add('clicked');
       // toggle class front
       card.classList.toggle('front');
+
       // add class to clicked cards
       card.classList.add('clicked');
+
       // increase click counter by 1
       counter +=1;
       console.log(counter);
@@ -76,7 +101,10 @@ document.addEventListener('DOMContentLoaded', function(){
       valuesArray.push(parseInt(playingCardValue));
       console.log(valuesArray);
 
-
+      function hideMatches(event) {
+        var match = event.target;
+      }
+      console.log(event.target);
 
       // GAME LOGIC
       // if there are two values in the array
@@ -97,48 +125,37 @@ document.addEventListener('DOMContentLoaded', function(){
           valuesArray = []; // WORKS
           console.log(valuesArray);
 
-          // TAKE CARDS OFF BOARD - doesn't work
-
-          // variable for clicked cards
-          // var clickedCards = document.querySelectorAll('clicked');
-          //
-          // clickedCards.forEach(function(each){
-          //   each.style.display = 'none';
-          //   // each.style.visibility = 'hidden';
-          // });
-
-          // is this trying to turn the face divs off?
-
+          // TAKE CARDS OFF BOARD
+          hideMatches();
 
         } else {
           // IF NO MATCH
-
-          // flip cards back over
+          // timeout so user will see both cards
           setTimeout(function() {
 
+            // flip cards back over
+            var clickedCardFront = document.querySelectorAll('.cardfront');
+              clickedCardFront.forEach(function(cards){
+                cards.classList.add('front');
+                cards.classList.remove('clicked');
+              });
 
+            var clickedCardBack= document.querySelectorAll('.cardback');
+              clickedCardBack.forEach(function(cards){
+                cards.classList.add('back');
+                cards.classList.remove('clicked');
+              });
 
-          var clickedCardFront = document.querySelectorAll('.cardfront');
-            clickedCardFront.forEach(function(cards){
-              cards.classList.add('front');
-            });
+            // alert try again
+            alert('Try again!'); // WORKS
+            // reset counter
+            counter = 0; // WORKS
+            console.log(counter);
+            // empty array
+            valuesArray = []; // WORKS
+            console.log(valuesArray);
 
-          var clickedCardBack= document.querySelectorAll('.cardback');
-          clickedCardBack.forEach(function(cards){
-            cards.classList.add('back');
-          });
-
-
-
-          // alert try again
-          alert('Try again!'); // WORKS
-          // reset counter
-          counter = 0; // WORKS
-          console.log(counter);
-          // empty array
-          valuesArray = []; // WORKS
-          console.log(valuesArray);
-        }, 1000);
+          }, 750);
         }
       } // else - do nothing - default
 

@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
   createDeck();
 
   // ====================
+  // problem area:
 
   // write a call back function for if match event target
     // where event target visibility is hidden
@@ -60,11 +61,6 @@ document.addEventListener('DOMContentLoaded', function(){
   for (var x=0; x<clicked.length; x++) {
     clicked[x].addEventListener('click', hideMatches, false);
   }
-
-  // only implementing when you've looped through once already
-  // the rule is only implemented after you've made the match
-  // write this function in the form of a call back function that is outside the click event
-  // that you can call once you have a match
 
   // ====================
 

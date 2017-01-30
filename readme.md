@@ -35,7 +35,6 @@ I wanted to build a game that I'd be able to initiate dynamically with randomize
 * Users should be able to have matched or mismatched cards evaluated.
 * Users should be able to be alerted to whether they have a match or to try again.
 * Users should be able to see their current score
-* Users should be able to reset the game
 
 ### Technologies Used:
 * HTML - creating cards and game board

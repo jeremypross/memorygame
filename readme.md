@@ -14,7 +14,7 @@
 
 5. The score is the number of matches the user is found.
 
-6. Game will start over when all matches are found, or when the 'reset game' button is clicked.
+6. Game will start over when all matches are found.
 
 
 ### Wireframe:

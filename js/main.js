@@ -77,14 +77,15 @@ document.addEventListener('DOMContentLoaded', function(){
   // for each loop to toggle card classes when there is a click event
   frontOfCard.forEach(function(card) {
     card.addEventListener('click', function(event) {
+
       // toggle class back
       card.nextSibling.classList.toggle('back');
-      card.nextSibling.classList.add('clicked');
+
       // toggle class front
       card.classList.toggle('front');
 
       // add class to clicked cards
-      card.classList.add('clicked');
+      card.nextSibling.classList.add('clicked');
 
       // increase click counter by 1
       counter +=1;
@@ -97,10 +98,17 @@ document.addEventListener('DOMContentLoaded', function(){
       console.log(valuesArray);
 
       // call back function to remove cards from board.
-      function hideMatches(event) {
+      // function hideMatches(event) {
+      //   var match = event.target;
+      //   match.style.display = 'none';
+      // }
+      // console.log(event.target);
+
+      function hideMatches(event){
         var match = event.target;
+        match.style.display = 'none';
       }
-      console.log(event.target);
+
 
       // GAME LOGIC
       // if there are two values in the array
@@ -122,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(valuesArray);
 
           // TAKE CARDS OFF BOARD
-          // hideMatches();
+          hideMatches();
 
         } else {
           // IF NO MATCH

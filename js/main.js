@@ -108,17 +108,17 @@ document.addEventListener('DOMContentLoaded', function(){
         // IF MATCH
         if (valuesArray[0] === valuesArray[1]) {
           // increase points by 1
-          score ++; // WORKS
+          score ++;
           console.log(score);
           // alert = you have a match!
-          alert(`You found a match! Your match count is ${score} of 8!`); // WORKS
+          alert(`You found a match! Your match count is ${score} of 8!`);
           // increase game score
           gameScore.innerHTML = `${score} out of 8!`;
           // reset counter to zero
-          counter = 0; // WORKS
+          counter = 0;
           console.log(counter);
           // empty array
-          valuesArray = []; // WORKS
+          valuesArray = [];
           console.log(valuesArray);
 
           // TAKE CARDS OFF BOARD
@@ -143,12 +143,12 @@ document.addEventListener('DOMContentLoaded', function(){
               });
 
             // alert try again
-            alert('Try again!'); // WORKS
+            alert('Try again!');
             // reset counter
-            counter = 0; // WORKS
+            counter = 0;
             console.log(counter);
             // empty array
-            valuesArray = []; // WORKS
+            valuesArray = [];
             console.log(valuesArray);
 
           }, 750);

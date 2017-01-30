@@ -29,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function(){
   // checking work
   console.log(shuffle(cardValues));
 
-
-
   // function - iterate through the array, and then give each div the value of the the array value.
   var createDeck = function(){
     // create empty string that has full scope of createDeck function
@@ -46,16 +44,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   };
   createDeck();
-
-  // ====================
-  // problem area:
-
-  // write a call back function for if match event target
-    // where event target visibility is hidden
-
-
-
-  // ====================
 
   // variable for front of card - for click event
   var frontOfCard = document.querySelectorAll('.front');
@@ -90,19 +78,16 @@ document.addEventListener('DOMContentLoaded', function(){
       valuesArray.push(parseInt(playingCardValue));
       console.log(valuesArray);
 
-      // call back function to remove cards from board.
-      // function hideMatches(event) {
-      //   var match = event.target;
-      //   match.style.display = 'none';
-      // }
-      // console.log(event.target);
 
+      // write a call back function for if match event target
+        // where event target visibility is hidden
+      function hideMatches(event){
+        var match = event.target;
+        match.style.visibility = 'hidden';
+      }
       console.log(event.target);
 
       // have to find way to target elements.
-
-
-
 
       // GAME LOGIC
       // if there are two values in the array
@@ -124,28 +109,20 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(valuesArray);
 
           // TAKE CARDS OFF BOARD
+
+          // ====================
+          // problem area:
+
           // variable for cards with clicked class
-          var clicked = document.querySelectorAll('clicked');
-
-          clicked.forEach(function(cards){
-            cards.style.visibility = 'hidden';
-          })
-
-          // clicked.forEach(function(cards){
-          //   cards.style.visibility = 'hidden';
-          // })
+          var clicked = document.getElementsByClassName('clicked');
 
           // for loop to run a call back function hideMatches through clicked elements
-          // for (var x=0; x<clicked.length; x++) {
-          //   // clicked[x].addEventListener('click', hideMatches, false);
-          // clicked.style.visibility = 'hidden';
-          // }
+          for (var x=0; x<clicked.length; x++) {
+            clicked[x].addEventListener('click', hideMatches, false);
+          }
+          hideMatches();
 
-
-          // function hideMatches(){
-          // }
-
-
+          // ====================
 
         } else {
           // IF NO MATCH

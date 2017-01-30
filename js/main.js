@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function(){
   // credit: fisher yates algorithm (Source #2 in readme.md) (http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) & (https://bost.ocks.org/mike/shuffle/)
   var shuffle = function(arr) {
     var currentIndex = arr.length, temporaryValue, randomIndex;
-
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
       // Pick a remaining array element:
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var backOfCard  = document.querySelectorAll('.back');
   // create holder array for card values
   var valuesArray = [];
-
+  // variable for score
   var gameScore = document.getElementById('score');
 
 
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function(){
       card.classList.toggle('front');
 
       // add class to clicked cards
-      card.nextSibling.classList.add('clicked');
+      card.classList.add('clicked');
 
       // increase click counter by 1
       counter +=1;
@@ -108,6 +107,9 @@ document.addEventListener('DOMContentLoaded', function(){
         var match = event.target;
         match.style.display = 'none';
       }
+      console.log(event.target);
+
+      // need to get match to be var clicked
 
 
       // GAME LOGIC

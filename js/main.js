@@ -53,11 +53,10 @@ document.addEventListener('DOMContentLoaded', function(){
   // write a call back function for if match event target
     // where event target visibility is hidden
 
-
-
-
+  // variable for cards with clicked class
   var clicked = document.getElementsByClassName('clicked');
 
+  // for loop to run a call back function hideMatches through clicked elements
   for (var x=0; x<clicked.length; x++) {
     clicked[x].addEventListener('click', hideMatches, false);
   }
@@ -101,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function(){
       valuesArray.push(parseInt(playingCardValue));
       console.log(valuesArray);
 
+      // call back function to remove cards from board.
       function hideMatches(event) {
         var match = event.target;
       }
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function(){
           console.log(valuesArray);
 
           // TAKE CARDS OFF BOARD
-          hideMatches();
+          // hideMatches();
 
         } else {
           // IF NO MATCH

@@ -39,6 +39,15 @@
   font-size: 1.2em;
 }
 
+#status {
+  height: 30px;
+  width: 100%;
+  font-style: italic;
+  font-size: 1.2em;
+  text-align: center;
+  color: red;
+}
+
 h1{
   text-align: center;
   padding-right: 30px;
@@ -57,6 +66,10 @@ h3 {
 css flip animations for cards
 Source #1 credit: http://www.webascender.com/Blog/ID/651/CSS-3D-Card-Flip-Animation-Tutorial#.WIorwLYrKL8
 */
+
+.match {
+  visibility: hidden;
+}
 
 .card{
   position: absolute;

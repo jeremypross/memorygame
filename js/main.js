@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
     cardValues.forEach(function(card){
       // change value of empty string
       var newText = '';
-      newText += '<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front cardfront\'>'+'</div>'+'<div class=\'face back cardback\'>'+ card +'</div>'+'</div>'+'</div>';
+      newText += '<div class=\'card-container\'>'+'<div class=\'card\'>'+'<div class=\'face front cardfront playingcard\'>'+'</div>'+'<div class=\'face back cardback playingcard\'>'+ card +'</div>'+'</div>'+'</div>';
       // create a variable for container element
       var container = document.getElementById('container');
       // place array of strings into container element
@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function(){
   var valuesArray = [];
   // variable for score
   var gameScore = document.getElementById('score');
-
+  // var for status updates
+  var status = document.getElementById('status');
 
   // for each loop to toggle card classes when there is a click event
   frontOfCard.forEach(function(card) {
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function(){
       // toggle class front
       card.classList.toggle('front');
 
+      card.classList.add('clicked');
       // add class to clicked cards
       card.nextSibling.classList.add('clicked');
 
@@ -78,17 +80,6 @@ document.addEventListener('DOMContentLoaded', function(){
       valuesArray.push(parseInt(playingCardValue));
       console.log(valuesArray);
 
-
-      // write a call back function for if match event target
-        // where event target visibility is hidden
-      function hideMatches(event){
-        var match = event.target;
-        match.style.visibility = 'hidden';
-      }
-      console.log(event.target);
-
-      // have to find way to target elements.
-
       // GAME LOGIC
       // if there are two values in the array
       if (valuesArray.length ===2) {
@@ -98,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function(){
           score ++;
           console.log(score);
           // alert = you have a match!
-          alert(`You found a match! Your match count is ${score} of 8!`);
+          status.innerHTML = `You found a match! Your match count is ${score} of 8!`;
           // increase game score
           gameScore.innerHTML = `${score} out of 8!`;
           // reset counter to zero
@@ -108,21 +99,21 @@ document.addEventListener('DOMContentLoaded', function(){
           valuesArray = [];
           console.log(valuesArray);
 
-          // TAKE CARDS OFF BOARD
+          var clicked = document.querySelectorAll('.clicked');
 
-          // ====================
-          // problem area:
+          setTimeout(function() {
+          clicked.forEach(function(card){
+            card.classList.add('match');
+            card.classList.remove('clicked');
+            card.classList.remove('face');
+            card.classList.remove('front');
+            card.classList.remove('back');
+            card.classList.remove('cardfront');
+            card.classList.remove('cardback');
+            card.classList.remove('playingcard');
+          })
+        }, 750);
 
-          // variable for cards with clicked class
-          var clicked = document.getElementsByClassName('clicked');
-
-          // for loop to run a call back function hideMatches through clicked elements
-          for (var x=0; x<clicked.length; x++) {
-            clicked[x].addEventListener('click', hideMatches, false);
-          }
-          hideMatches();
-
-          // ====================
 
         } else {
           // IF NO MATCH
@@ -143,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function(){
               });
 
             // alert try again
-            alert('Try again!');
+            status.innerHTML='Try again!';
             // reset counter
             counter = 0;
             console.log(counter);
@@ -159,10 +150,8 @@ document.addEventListener('DOMContentLoaded', function(){
       if (score === 8){
         alert('You have won the game!');
         // reshuffle cards
-        createDeck();
+        // createDeck();
       }
-
-
     }); // click event
   }); // forEach loop
 

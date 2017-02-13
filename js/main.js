@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function(){
       // toggle class front
       card.classList.toggle('front');
 
+      // add class to clicked cards to front and back of cards
       card.classList.add('clicked');
-      // add class to clicked cards
       card.nextSibling.classList.add('clicked');
 
       // increase click counter by 1
@@ -99,20 +99,21 @@ document.addEventListener('DOMContentLoaded', function(){
           valuesArray = [];
           console.log(valuesArray);
 
+          // add class of match and remove all other classes to take cards off boards
           var clicked = document.querySelectorAll('.clicked');
 
           setTimeout(function() {
-          clicked.forEach(function(card){
-            card.classList.add('match');
-            card.classList.remove('clicked');
-            card.classList.remove('face');
-            card.classList.remove('front');
-            card.classList.remove('back');
-            card.classList.remove('cardfront');
-            card.classList.remove('cardback');
-            card.classList.remove('playingcard');
-          })
-        }, 750);
+            clicked.forEach(function(card){
+              card.classList.add('match');
+              card.classList.remove('clicked');
+              card.classList.remove('face');
+              card.classList.remove('front');
+              card.classList.remove('back');
+              card.classList.remove('cardfront');
+              card.classList.remove('cardback');
+              card.classList.remove('playingcard');
+            })
+          }, 750);
 
 
         } else {
@@ -149,8 +150,6 @@ document.addEventListener('DOMContentLoaded', function(){
       // if you have found all 8 pairs, alert the user they have won
       if (score === 8){
         alert('You have won the game!');
-        // reshuffle cards
-        // createDeck();
       }
     }); // click event
   }); // forEach loop

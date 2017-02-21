@@ -151,13 +151,9 @@ document.addEventListener('DOMContentLoaded', function(){
       // if you have found all 8 pairs, alert the user they have won
       if (score === 8){
         alert('You have won the game!');
-        status.innerHTML = `You win! You found ${score} of 8 matches!`;
-
+        status.innerHTML = `You win! You found all ${score} matches!`;
       }
     }); // click event
   }); // forEach loop
-
-
-
 
 });
